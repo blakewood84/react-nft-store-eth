@@ -58,7 +58,11 @@ const NFTCard = (props) => {
             <Card.Footer>
                 <small className="text-muted">Last Updated 3 min ago</small>
             </Card.Footer>
-            <div className={`filter-${token_id}`} style={{backgroundColor: '#000', opacity: '.45', display: 'none', width: '100%', height: '100%'}}></div>
+            <div className={`filter-${token_id}`} style={{
+                backgroundColor: '#000', 
+                opacity: '.45', 
+                display: 'none', width: '100%', height: '100%'
+            }}></div>
             <div className={`overlay-${token_id}`} style={{display: 'none'}}>
                 <Button onClick={handleProveOwnership} style={{fontSize: '10px'}}>Prove Ownership</Button>
             </div>
