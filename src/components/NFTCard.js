@@ -4,7 +4,7 @@ import { Card, Button } from 'react-bootstrap';
 const NFTCard = (props) => {
 
     const { token_id, metadata, name, token_address, contract_type } = props
-    const { image, description, external_url } = JSON.parse(metadata)
+    const { image, description, external_url } = JSON.parse(metadata) || {}
 
     const handleMouseEnter = () => {
 
