@@ -9,7 +9,7 @@ const NFTCard = (props) => {
     const handleMouseEnter = () => {
 
         var filter = document.querySelector(`.filter-${token_id}`)
-        filter.style.display = 'block'
+        filter.style.display = 'inline-flex'
 
         var block = document.querySelector(`.overlay-${token_id}`)
         block.style.display = 'block'
@@ -60,8 +60,13 @@ const NFTCard = (props) => {
             </Card.Footer>
             <div className={`filter-${token_id}`} style={{
                 backgroundColor: '#000', 
-                opacity: '.45', 
-                display: 'none', width: '100%', height: '100%'
+                opacity: '.5',
+                display: 'none',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%'
             }}></div>
             <div className={`overlay-${token_id}`} style={{display: 'none'}}>
                 <Button onClick={handleProveOwnership} style={{fontSize: '10px'}}>Prove Ownership</Button>
