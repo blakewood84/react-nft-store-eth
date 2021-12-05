@@ -72,8 +72,10 @@ function App() {
 
       setIsLoading(true)
       
-      await Moralis.Web3API.account.getNFTs({chain: 'eth', address: address}).then((res) => setEthNFTs(res))
-      await Moralis.Web3API.account.getNFTs({chain: 'polygon', address: address}).then((res) => setPolygonNFTs(res))
+      await Moralis.Web3API.account.getNFTs({chain: 'ropsten', address: address}).then((res) => {
+        console.log(res)
+        setEthNFTs(res)
+      })
       
       setIsLoading(false)
   }
@@ -124,7 +126,13 @@ function App() {
         {
             !isLoading && ethNFTs?.result?.length > 0 && (
               <div className="container">
-                  <h1 style={{textAlign: 'left', color: '#c886e5'}}>Polygon (MATIC):</h1>
+                  <h1 style={{textAlign: 'left', color: '#c886e5'}}>Ropsten Collection:</h1>
+                  {
+                      ethNFTs?.result.map(item => {
+                        return <NFTCard {...item} />
+                        
+                      })
+                    }
               </div>
             )
           }
